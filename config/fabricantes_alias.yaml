@@ -1,0 +1,17 @@
+# Diccionario de normalización de FABRICANTE (SRS Herramientas, sección 3.3).
+# Clave = alias tal como puede aparecer escrito en los datos de origen (GEMA/ClaseX/pañol).
+# Valor = forma normalizada que se escribe en el maestro final.
+# Cualquier fabricante que NO esté listado acá se normaliza igual poniéndolo en MAYÚSCULAS
+# (comportamiento por defecto del "OTRO CASO" del pseudocódigo, no hace falta listarlo).
+#
+# Para agregar un fabricante nuevo con variantes: agregá una línea por cada alias que
+# apunte al mismo valor normalizado.
+
+alias:
+  "CONSOLIDATED DEVICES INC": "CONSOLIDATED DEVICES INC (CDI)"
+  "CDI": "CONSOLIDATED DEVICES INC (CDI)"
+  "CONSOLIDATED": "CONSOLIDATED DEVICES INC (CDI)"
+  "BRITOOL": "BRITOOL"
+  "BRISTOOL": "BRITOOL"
+  "AC DELCO": "AC DELCO"
+  "DELCO": "AC DELCO"

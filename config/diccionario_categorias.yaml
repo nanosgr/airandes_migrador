@@ -1,0 +1,26 @@
+# Módulo A (Stock) — mapeo Familia/NodoContable de ClaseX -> CATEGORÍA de Cavok.
+#
+# IMPORTANTE: esta es la "tabla oficial de mapeo" que el PASO 1 de la Metodología de
+# Stock pide aprobar formalmente antes de la carga masiva (Familia/Nodo -> CATEGORÍA,
+# TIPO, XYZ). Las entradas de abajo son EJEMPLOS ILUSTRATIVOS a partir de los nombres
+# de familia vistos en ClaseX (TEC, CONT, ROT, GA/GARMIN, THR/THRUSH, CESS) — hay que
+# reemplazarlas por la tabla real que apruebe el área técnica antes de correr sobre
+# las 5.058 filas reales.
+#
+# Reglas ordenadas: se evalúan en orden y gana la primera que matchea. `campo` es
+# "familia" o "nodo_contable"; `valor` se compara sin distinguir mayúsculas/minúsculas.
+# Si ninguna regla matchea, la fila queda con CATEGORÍA="General" + bandera de revisión
+# humana (comportamiento fijo del Módulo A, no configurable).
+
+reglas:
+  - campo: "familia"
+    valor: "HERRAMIENTAS"
+    categoria: "Herramientas"
+
+  - campo: "nodo_contable"
+    valor: "CONSUMIBLES"
+    categoria: "Consumibles"
+
+  - campo: "nodo_contable"
+    valor: "COMPONENTES"
+    categoria: "Componentes"

@@ -1,0 +1,45 @@
+# Catálogos de valores permitidos y parámetros para el módulo de Stock de Productos.
+# Fuente: "DOCUMENTO DE ESPECIFICACIONES TÉCNICAS (SRS).docx" secciones 2.2/2.3 y
+# "Metodologia e Instructivo Migracion Stock Productos" sección 2/4.
+
+# Campos obligatorios por fila. Lista completa del SRS 2.3 (9 campos), no la lista
+# corta del pseudocódigo simplificado — decisión confirmada 2026-09-11.
+# Nombres = atributos del modelo FilaStock (ver core/stock/modelo.py).
+campos_obligatorios:
+  - "nombre"
+  - "categoria"
+  - "tipo"
+  - "xyz"
+  - "deposito"
+  - "ubicacion"
+  - "cantidad"
+  - "unidad"
+  - "moneda"
+
+# Módulo B: valor inyectado cuando UBICACIÓN viene vacía/nula/en blanco desde ClaseX.
+ubicacion_por_defecto: "POR UBICAR"
+
+# Homologación de unidades ClaseX -> código estándar Cavok.
+unidades_homologadas:
+  "UNID.": "UND"
+  "UNIDAD": "UND"
+  "UN": "UND"
+  "METROS": "MT"
+  "METRO": "MT"
+  "MTS": "MT"
+  "KILOGRAMO": "KG"
+  "KILOGRAMOS": "KG"
+  "KILO": "KG"
+  "PULGADA2": "IN2"
+  "PULGADAS2": "IN2"
+
+unidades_validas:
+  - "UND"
+  - "MT"
+  - "KG"
+  - "IN2"
+
+monedas_validas:
+  - "USD"
+  - "ARS"
+  - "EUR"

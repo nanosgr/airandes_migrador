@@ -1,0 +1,26 @@
+# Módulo A (Stock) — mapeo Familia/NodoContable de ClaseX -> TIPO (00-99) y XYZ
+# (X=Rotable, Y=Reparable, Z=Consumible) de Cavok.
+#
+# IMPORTANTE: mismo caso que diccionario_categorias.yaml — son EJEMPLOS a partir de
+# los códigos mencionados en el SRS ("00 Componentes", "07 Consumibles") y deben
+# reemplazarse por la matriz oficial aprobada por el área técnica.
+#
+# Reglas ordenadas, misma semántica que diccionario_categorias.yaml.
+# Si ninguna regla matchea, TIPO/XYZ quedan vacíos y la fila se marca "General" para
+# revisión humana (igual que la categoría, comportamiento fijo del Módulo A).
+
+reglas:
+  - campo: "nodo_contable"
+    valor: "COMPONENTES"
+    tipo: "00"
+    xyz: "X"
+
+  - campo: "nodo_contable"
+    valor: "CONSUMIBLES"
+    tipo: "07"
+    xyz: "Z"
+
+  - campo: "familia"
+    valor: "HERRAMIENTAS"
+    tipo: "08"
+    xyz: "Y"

@@ -1,0 +1,64 @@
+# Catálogos de valores permitidos y parámetros para el módulo de Herramientas Calibradas.
+# Fuente: "Especificacion Tecnica - Automatizacion Migracion Herramientas Calibradas.docx",
+# sección 4 (catálogos de desplegables) y sección 3 (reglas de negocio).
+# Editable a mano: cualquier cambio se aplica en la próxima ejecución de la app, sin recompilar nada.
+
+sede: "AIRANDES"
+
+bases:
+  - "San Fernando"
+  - "Córdoba"
+
+unidades:
+  - "UND"
+  - "M"
+  - "KG"
+  - "SET"
+
+ubicaciones:
+  - "HANGAR N°1"
+  - "LABORATORIO DE PINTURA"
+  - "SALA DE MOTORES"
+  - "VALIJA TESTER DE MOTORES"
+
+estados:
+  - "Calibrada"
+  - "Disponible"
+  - "No disponible"
+  - "Averiada"
+  - "Prestada"
+  - "En reparación"
+
+empresas_calibradoras:
+  - "JET SERVICE"
+  - "CEMEC"
+  - "A&G"
+  - "CHACOMA"
+  - "MEYCA"
+  - "TELEBIT"
+  - "OTRO"
+
+# Campos obligatorios por fila (pseudocódigo SRS 3.1). Nombres = atributos del modelo
+# FilaHerramienta (ver core/herramientas/modelo.py), no los nombres de columna Excel.
+campos_obligatorios:
+  - "sede"
+  - "base"
+  - "nombre"
+  - "sn"
+  - "unidad"
+  - "ubicacion"
+
+# Ciclo de calibración (SRS 3.2). GEMA entrega el intervalo en meses; se convierte a días.
+intervalo_dias_default: 365
+alerta_dias_default: 30
+
+# Estados con los que una herramienta vencida NO puede ingresar (dispara ROJO/error).
+estados_vencida_bloqueantes:
+  - "Calibrada"
+  - "Disponible"
+
+# Estados con los que una herramienta vencida queda pendiente de aprobación manual
+# del Validador (no se autotransfiere, decisión confirmada 2026-09-11).
+estados_vencida_pendientes:
+  - "No disponible"
+  - "En reparación"

@@ -1,0 +1,30 @@
+[project]
+name = "airandes-migrador"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Sebastian Rios", email = "sebastian.g.rios@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "openpyxl>=3.1.5",
+    "pandas>=3.0.5",
+    "pydantic>=2.13.5",
+    "pyside6>=6.11.2",
+    "python-dateutil>=2.9.0.post0",
+    "pyyaml>=6.0.3",
+]
+
+[project.scripts]
+airandes-migrador = "airandes_migrador.cli:main"
+airandes-migrador-ui = "airandes_migrador.app:main"
+
+[build-system]
+requires = ["uv_build>=0.11.21,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pyinstaller>=6.22.2",
+    "pytest>=9.1.1",
+]
