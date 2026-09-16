@@ -10,7 +10,7 @@ from typing import Any, Callable
 
 from PySide6.QtCore import QAbstractTableModel, QModelIndex, QPersistentModelIndex, Qt
 
-from airandes_migrador.ui.common.colores import color_para_semaforo
+from airandes_migrador.ui.common.colores import COLOR_TEXTO_TABLA, color_para_semaforo
 
 # Cada columna: (título mostrado, función que extrae el valor de una FilaEvaluada).
 ColumnaTabla = tuple[str, Callable[[Any], Any]]
@@ -46,6 +46,8 @@ class ModeloTablaEvaluacion(QAbstractTableModel):
             return "" if valor is None else str(valor)
         if role == Qt.ItemDataRole.BackgroundRole:
             return color_para_semaforo(fila_evaluada.resultado.semaforo)
+        if role == Qt.ItemDataRole.ForegroundRole:
+            return COLOR_TEXTO_TABLA
         return None
 
     def headerData(

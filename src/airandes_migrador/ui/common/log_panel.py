@@ -7,9 +7,9 @@ from datetime import datetime
 from PySide6.QtWidgets import QPlainTextEdit
 
 _COLOR_POR_NIVEL = {
-    "info": "#1a1a1a",
-    "advertencia": "#a06400",
-    "error": "#c0392b",
+    "info": "#e0e0e0",
+    "advertencia": "#e0a030",
+    "error": "#ff6b6b",
 }
 
 
